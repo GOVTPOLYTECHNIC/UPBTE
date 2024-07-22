@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>National Board of Examination in Rehabilitation(NBER)</title>
+
+    <!-- Fonts -->
+
+
+<!-- Styles -->
+    <link rel="stylesheet" href="https://nber-rehabcouncil.gov.in/packages/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://nber-rehabcouncil.gov.in/packages/sweetalert/sweetalert.min.css">
+    <link rel="stylesheet"  href="https://nber-rehabcouncil.gov.in/packages/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet"  href="https://nber-rehabcouncil.gov.in/css/style.css" />
+    <link rel="stylesheet" href="https://nber-rehabcouncil.gov.in/packages/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet"  href="https://nber-rehabcouncil.gov.in/packages/bootstrap-imageupload/dist/css/bootstrap-imageupload.css" />
+
+
+<!-- JavaScripts -->
+    <script src="https://nber-rehabcouncil.gov.in/packages/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://nber-rehabcouncil.gov.in/packages/moment/moment.min.js"></script>
+    <script src="https://nber-rehabcouncil.gov.in/packages/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://nber-rehabcouncil.gov.in/packages/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://nber-rehabcouncil.gov.in/packages/sweetalert/sweetalert.min.js"></script>
+    <script src="https://nber-rehabcouncil.gov.in/packages/bootstrap-fileinput/bootstrap.file-input.js"></script>
+    <script src="https://nber-rehabcouncil.gov.in/packages/bootstrap-imageupload/dist/js/bootstrap-imageupload.js"></script>
+    <script src="https://nber-rehabcouncil.gov.in/packages/tableexport/tableExport.js"></script>
+        <style>
+        body {
+            /*margin-top: -40px;*/
+            background: #EEEEEE;
+        }
+
+        .custom-pageheader {
+            background: #EEEEEE;
+        }
+
+        .lucida-text {
+            font-family: "Lucida Calligraphy";
+        }
+        .adobe {
+            font-family: "Adobe Caslon Pro";
+        }
+        .yu {
+            font-family: "Yu Gothic Light";
+        }
+        .arial-text {
+            font-family: "Arial";
+        }
+        .courier-text {
+            font-family: "Courier New";
+        }
+
+        .table-borderless > tbody > tr > td,
+        .table-borderless > tbody > tr > th,
+        .table-borderless > tfoot > tr > td,
+        .table-borderless > tfoot > tr > th,
+        .table-borderless > thead > tr > td,
+        .table-borderless > thead > tr > th {
+            border: none !important;
+        }
+        .table{
+            background-color: #fff;
+        }
+        #printPageButton{
+            background:white!important;
+        }
+        @media  print {
+            #printPageButton {
+                display: none;
+            }
+            #printPage {
+                size: A4 landscape;
+            }
+            .hidethis {
+                display: none;
+            }
+            .hidelink:after {
+                content: none !important;
+            }
+            a[href]:after {
+                content: none !important;
+            }
+        }
+
+        .equal-height-row {
+            display: flex;
+        }
+
+        .minus15px-margin-top {
+            margin-top: -15px !important;
+        }
+
+        .white-background {
+            background-color: white;
+            color: black;
+        }
+
+        .black-background {
+            background-color: black;
+            color: white;
+        }
+
+        .red-background {
+            background-color: red !important;
+            color: white !important;
+        }
+
+        .ghostwhite-background {
+            background-color: ghostwhite;
+            color: deepskyblue;
+        }
+
+        .darkblue-background {
+            background-color: darkblue;
+            color: white;
+        }
+
+        .green-background {
+            background: green !important;
+            color: white !important;
+        }
+
+        .grey-background {
+            background: #EEEEEE;
+        }
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+        .center-text {
+            text-align: center !important;
+        }
+
+        .left-text {
+            text-align: left !important;
+        }
+
+        .right-text {
+            text-align: right !important;
+        }
+
+        .orange-text {
+            color: darkorange !important;
+        }
+
+        .green-text {
+            color: darkgreen !important;
+        }
+
+        .red-text {
+            color: red !important;
+        }
+
+        .blue-text {
+            color: blue !important;
+        }
+
+        .brown-text {
+            color: brown !important;
+        }
+
+        .yellow-text {
+            color: yellow !important;
+        }
+
+        .black-text {
+            color: black !important;
+        }
+
+        .icon-text {
+            font-size: 30px;
+        }
+
+        .large-text {
+            font-size: large;
+        }
+
+        .footer {
+            background: #3fc3ee;
+            color: white;
+        }
+
+        td, th {
+            vertical-align: middle !important;
+        }
+
+        . {
+            display: flex; /* equal height of the children */
+        }
+        .page-break {
+            page-break-after: always;
+        }
+
+        .h4-text {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .h5-text {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .h6-text {
+            font-size: 15px;
+        }
+        .h7-text {
+            font-size: 12px;
+        }
+        .h8-text {
+            font-size: 10px;
+        }
+
+        .medium-text {
+            font-size: medium;
+        }
+
+        .justified-text {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .red-button {
+            background-color: red !important;
+            color: white !important;
+        }
+
+        .red-button:focus,
+        .red-button:hover {
+            background-color: indianred !important;
+            border-color: indianred !important;
+            color: white !important;
+        }
+
+        .breadcrumb {
+            padding: 10px !important;
+            background-color: cornsilk;
+        }
+        .breadcrumb a, .breadcrumb > .heading, .breadcrumb > .active{
+            font-size: medium;
+            color: blue;
+        }
+        .breadcrumb > .active{
+            font-weight: bold;
+            color: red;
+        }
+        .breadcrumb > li + li:before {
+            content: "\00BB";
+            color: blue;
+            font-size: large;
+        }
+        .uppercase-text {
+            text-transform: uppercase !important;
+        }
+        .notfound{
+            display: none;
+        }
+        .table-condensed .progress {
+            margin-bottom: 0 !important;
+        }
+        .wrimagecard{
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            position: relative;
+            background: #fff;
+            box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .wrimagecard .fa{
+            position: relative;
+            font-size: 70px;
+        }
+        .wrimagecard-topimage_header{
+            padding: 20px;
+        }
+        a.wrimagecard:hover, .wrimagecard-topimage:hover {
+            box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+        }
+        .wrimagecard-topimage a {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .wrimagecard-topimage_title {
+            padding: 10px 10px;
+            height: 80px;
+            padding-bottom: 0.75rem !important;
+            position: relative;
+        }
+        .wrimagecard-topimage a {
+            border-bottom: none;
+            text-decoration: none;
+            color: #525c65;
+            transition: color 0.3s ease;
+        }
+
+        .custom-link:hover, .custom-link:visited, .custom-link:link, .custom-link:active
+        {
+            text-decoration: none;
+        }
+
+        .content-hide {
+            /*visibility: hidden !important;*/
+            display: none !important;
+        }
+
+        .content-show {
+            /*visibility: visible;*/
+            display: inline !important;
+        }
+
+        .loader {
+            margin: auto !important;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-right: 16px solid green;
+            border-bottom: 16px solid red;
+            border-left: 16px solid pink;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes  spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body id="app-layout">
+<style>
+        .navbar-default .navbar-nav>li>a{
+            color:#fff;    
+        }
+
+        .navbar-default .navbar-nav>li>a:hover{
+            color:#cfcfcf;    
+        }
+        .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+            background: orange!important;
+            color:#000!important;
+        }
+    </style>
+    
+                <div id="printPageButton">
+    <div class="container" style="background:white">
+        <div class="row">
+            <div class="col-sm-12 ">
+               <!-- <img src="https://nber-rehabcouncil.gov.in/images/header.png" class="img-rounded img-responsive center-block" height="60%"/> -->
+               <style>
+                        @media  screen and (max-width: 970px) {
+                            .hclass {
+                                display: none;
+                            }
+                        }
+                    </style>
+                    <div class="hclass">
+                    <img class="pull-left" style="background-color:white;padding:0px;height:140px;padding-top:5px;padding-bottom:5px;" src="https://nber-rehabcouncil.gov.in/images/nber_logo.png" alt="NBER" class="img-rounded img-responsive center-block" />
+                    <div class="pull-left" style="padding-top:40px;padding-left:20px;">
+                    <span style="color:#040404;;font-size:20px;">
+                        National Board of Examination in Rehabilitation(NBER), New Delhi.
+                    </span> <br />
+                    <div style="color:black;font-size:14px;padding-bottom:8px;">
+                    An Adjunct Body of Rehabilitation Council of India, under Ministry of Social Justice and Empowerment
+                    </div> 
+                    </div>
+                    <a href="https://rehabcouncil.nic.in/" target="_blank">
+                        <img style="background-color:white;padding:4px;width: 200px;padding-top: 32px;" src="https://nber-rehabcouncil.gov.in/images/img/logo-new.jpg" alt="RCI" class="img-rounded img-responsive center-block pull-right" />
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default navbar-static-top darkblue-background">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav">
+                
+                  <li><a href="https://nber-rehabcouncil.gov.in/notice">Home</a></li>
+                  <li><a href="https://nber-rehabcouncil.gov.in/enrolment">Enrolment</a></li>
+                     <li class="dropdown" >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Examination  <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="https://nber-rehabcouncil.gov.in/institute/examinations/applications/22">Sep 2023 Exam </a></li>
+                            <li><a href="https://nber-rehabcouncil.gov.in/institute/exam/applicants?exam_id=24" style="">April 2024 Supplementary Exam</a></li> 
+                            <li><a href="https://nber-rehabcouncil.gov.in/institute/exam/home/25" style="">June 2024 Exam</a></li> 
+                        </ul>
+                    </li>
+
+                                             
+                     <li class="dropdown" >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Payments  <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="https://nber-rehabcouncil.gov.in/institute/affiliationfee">Affiliation Fee</a></li>
+                                                    </ul>
+                    </li>
+                    
+                     <li><a href="https://nber-rehabcouncil.gov.in/reportissue">Data Correction Requests </a></li>
+                     <li><a href="https://nber-rehabcouncil.gov.in/institute/faculties">Faculties </a></li>
+
+                    
+                </ul>
+
+                                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><form action="https://nber-rehabcouncil.gov.in/searchcandidates" >
+                            <div class="input-group" style="width:300px;margin-top:7px;margin-right: 5px;">
+                                <input type="text" name='key' class="form-control" placeholder="Search with Enrolment# or Name">
+                                <span class="input-group-btn">
+                                                <button type="submit" class="btn btn-primary" type="button"><i class="fa fa-btn fa-search"></i></button>
+                                            </span>
+                            </div></form>
+                    </li>
+
+                    <!-- Authentication Links -->
+                                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                UP027 <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                            <li><a href="https://nber-rehabcouncil.gov.in/institute/profile"><i class="fa fa-btn fa-user"></i>Profile</a></li>
+                            <li><a href="https://nber-rehabcouncil.gov.in/institute/changepassword"><i class="fa fa-btn fa-key"></i>Change Password</a></li>
+                                <li><a href="https://nber-rehabcouncil.gov.in/logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                                    </ul>
+
+            </div>
+        </div>
+    </nav>
+   </div>
+
+                                    <style>
+        body{
+                background:#fff!important;
+        }
+</style>
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                            <br />
+            
+            <div class="alert alert-info">
+                <h4>2024 Batch Enrolmenent</h4>
+                <p>
+
+<h1>Enrolmenent Student List</h1>
+    <p>Open a PDF file Click <a href="DEd department final list.pdf">here</a>.</p>
+
+
+
+
+                    
+                    Click <a target="_blank" href="https://nber-rehabcouncil.gov.in/files/Enrolment 2024.pdf">here</a> to read step by step instructions for uploading 2024 Enrolment data to the portal.
+                </p>
+            </div>
+            <div class="alert alert-danger">
+                <h4>Practical Examination</h4>
+                <p>
+                    Practical examiners are provided with user name and password to login to the portal to download marksheet format and to upload the practical exam marks.
+                    <b>Practical marks to be uploaded to the portal on the same day of the exam.</b>
+                    <b>Username and password is emailed to the examiner</b>
+                </p>
+            </div>
+            <div class="alert alert-success">
+                <h4>Practical Hallticket</h4>
+                <p>
+                    Practical halltickets can be downloaded from the Examination -> June 2024 Exam -> Exam Applications & Halltickets page.
+                </p>
+            </div>
+            <div class="alert alert-success">
+                <h4>Internal Marks</h4>
+                <p>
+                    Internal marks can be entered from Examination -> June 2024 Exam  page by clicking on links in Internal Marks column.
+                </p>
+            </div>
+            <div class="alert alert-danger" style="display: none;">
+                <b>Important Announcement: </b>                
+                    Data verification on NBER portal is opened for the admission of 2023 academic year.<br>
+                    All the TTIs who have not uploaded the data of the students may upload latest by 30th March 2024, failing which the admission stands cancelled.
+            </div>
+
+                        
+                            <div class="alert alert-warning"  style="display: none;" >
+                    Please go to <a href="https://nber-rehabcouncil.gov.in/institute/profile">profile</a> page and update
+                    <ul>
+                                                                                                                                         </ul>
+                </div>
+            
+            <div class="alert alert-danger" style="display: none;" >
+                <b>Important Announcement: </b>  For online generation of marks cards and certificates, all the heads of the training institutes are advised to upload all candidate data including Aadhar card number, mobile number and email etc. on this portal.
+                <a target="_blank" href="https://nber-rehabcouncil.gov.in/files/nberexam220923.pdf">
+                    Circular
+                </a>
+            </div>
+
+            <div class="alert alert-warning"  style="display: none;">
+                <b>Add Faculties:  </b> 
+                Information of the faculty and their CRR details in each NI / TTI  which are running various courses of RCI has to be updated. 
+                
+                <a target="_blank" href="https://nber-rehabcouncil.gov.in/files/Adding_Faculty_to_TTI_Login.pdf">
+                    Guidelines 
+                </a> 
+            </div>
+                 
+            
+                      </div>
+        
+</body>
+</html>
